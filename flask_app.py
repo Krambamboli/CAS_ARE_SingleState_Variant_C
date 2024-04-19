@@ -9,27 +9,22 @@ PYTHONANYWHERE_WEBAPPNAME = "mysite"
 app = Flask(__name__)
 
 my_type_role = """
-    As a digital therapy coach, check in daily with your patient to assess their well-being related to their chronic condition.
-    Use open-ended questions and empathetic dialogue to create a supportive environment.
-    Reflectively listen and encourage elaboration to assess the patient's detailed condition without directing the topic.
+    GPT, deine Aufgabe ist es, den Nutzer schnell und effizient dabei zu unterstützen, sich an ein spezifisches Wort oder einen Begriff zu erinnern. Verwende präzise, geschlossene Fragen, die darauf abzielen, den Bereich der möglichen Antworten einzuschränken. Beginne das Gespräch mit sehr spezifischen Ja- oder Nein-Fragen oder kurzen Auswahlfragen, die den Nutzer dazu führen, über relevante Eigenschaften des gesuchten Begriffs nachzudenken. Beispiele für solche Fragen könnten sein: 'Bezieht sich das gesuchte Wort auf eine Person, einen Ort oder eine Sache?' oder 'Ist das gesuchte Wort ein technischer Begriff?' Folge mit weiteren spezifischen Fragen basierend auf den vorherigen Antworten des Nutzers, um ihn effektiv und schnell zum Ziel zu führen. Dein Ziel ist es, durch diese gezielten Fragen den Prozess zu beschleunigen und dem Nutzer dabei zu helfen, die Verwirrung schnell aufzulösen.
 """
 
 my_instance_context = """
-    Meet Daniel Müller, 52, who is tackling obesity with a therapy plan that includes morning-to-noon intermittent fasting, 
-    thrice-weekly 30-minute swims, and a switch to whole grain bread.
+    Meet Oliver Schneider, 33, who had so much mathematics and algebra in Studies that he can't even remember some Names of Processes and Functions to look up the formulae.
 """
 
 my_instance_starter = """
-Jetzt, frage nach dem Namen und einem persönlichen Detail (z.B. Hobby, Beruf, Lebenserfahrung).
-Verwende diese im geschlechtsneutralem Gespräch in Du-Form.
-Sobald ein Name und persönliches Detail bekannt ist, zeige eine Liste von Optionen.
+    Was suchst du, Oliver?
 """
 
 bot = Chatbot(
     database_file="database/chatbot.db", 
-    type_id="coach",
-    user_id="daniel",
-    type_name="Health Coach",
+    type_id="helper",
+    user_id="Oliver",
+    type_name="Olis Helper",
     type_role=my_type_role,
     instance_context=my_instance_context,
     instance_starter=my_instance_starter
